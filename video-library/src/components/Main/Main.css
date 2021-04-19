@@ -1,0 +1,22 @@
+.content-wrapper 
+{
+    display: flex;
+    padding-top: 3.7rem;
+    
+
+    
+    
+}
+
+.sidebar 
+{
+    width:20%;
+    margin: 1rem;
+    height: 100%;
+}
+
+.videos 
+{
+    width: 80%;
+    height: 100%;
+}

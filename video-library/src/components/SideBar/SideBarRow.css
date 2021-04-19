@@ -1,0 +1,53 @@
+.sidebarComp hr 
+{
+    height: 1px;
+    border: 0;
+    background-color: lightgray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.sideBarRow
+{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+   
+  
+}
+
+.sidebarIcon
+{
+   
+    font-size: large !important;
+}
+.sideBarRow:hover 
+{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.sideBarRow .selected 
+{
+    background-color: lightgray;
+}
+
+.sidebarTitle
+{
+    flex: 1;
+    margin-left: 20px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.sidebarTitle:hover
+{
+    color: #E06B97;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.sidebarIcon:hover 
+{
+    color: red;
+}
