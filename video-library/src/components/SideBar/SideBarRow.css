@@ -1,11 +1,4 @@
-.sidebarComp hr 
-{
-    height: 1px;
-    border: 0;
-    background-color: lightgray;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+
 .sideBarRow
 {
     display: flex;
@@ -24,6 +17,8 @@
 {
     background-color: lightgray;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 
 .sideBarRow .selected 

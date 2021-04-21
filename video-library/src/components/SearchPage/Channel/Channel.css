@@ -1,0 +1,32 @@
+.avataricon
+{
+    width: 120px;
+	height: 120px;
+  border-radius: 50px; 
+  margin: 10px 60px;
+}
+.channelRow
+{
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+.channelRowText
+{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.channelRowText  > h5,p
+{
+   color:#606060;
+   font-size: small !important;
+}
+
+.channelRowText >h3 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

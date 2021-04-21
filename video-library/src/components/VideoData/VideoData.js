@@ -34,18 +34,20 @@ function VideoData() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     title="Embedded youtube"/>
+                    <div className="video_info">
+                    
                     <div className="avatar">
                          <img src={item.imageSrc} alt=""/>
-                         <p>{item.channel}</p>
+                        
                         
                     </div>
                     <div className="video-text">
                     <h4>{item.title}</h4>
-                       
-                        <p>{item.views}.{item.timestamp}</p>
+                    <p>{item.channel}</p>
+                   <p>{item.views}.{item.timestamp}</p>
                     </div>
 
-
+</div>
                   </div>
                ))}
             </div>

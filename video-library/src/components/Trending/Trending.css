@@ -1,12 +1,9 @@
-.content-wrapper 
+.trending-wrapper 
 {
     display: flex;
-    padding-top: 3.7rem;
-    
-
-    
-    
+  padding-top: 5rem;
 }
+
 
 .sidebar 
 {
@@ -16,9 +13,11 @@
     flex-direction: column;
 }
 
-.videos 
+.trending-page
 {
     width: 80%;
     height: 100%;
+    background-color: #f9f9f9;
+    padding:20px 20px;
     
 }
