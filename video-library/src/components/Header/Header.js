@@ -1,14 +1,24 @@
 import React,{useState} from "react";
 import "./Header.css";
 import { Link  } from "react-router-dom";
+import DrawerToggleButton from "../SideDrawer/DrawerToggleButton";
+import SideDrawer from "../SideDrawer/SideDrawer";
 
 function Header() {
   const[inputSearch,setSearch]= useState("");
+  const [isOpened, setIsOpened] = useState(false);
+  function toggle() {
+    setIsOpened(wasOpened => !wasOpened);
+  }
+
   return (
     
     <div className="header">
       <div className="left-header">
-  {/* <i class="fa fa-bars" aria-hidden="true"></i> */}  
+      <div onClick={toggle}><DrawerToggleButton/>
+      
+      </div>
+      {isOpened && <SideDrawer/> }
         <Link to="/"> 
         <h1 className="logo">
         {" "}

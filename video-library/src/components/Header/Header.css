@@ -7,7 +7,7 @@
   display: flex;
   background-color: black;
   justify-content: space-between;
-  
+  z-index:1;
   align-items: center;
   padding: 3px;
   position: fixed;
@@ -42,6 +42,8 @@
 .logo {
   font-size: 1.6rem;
   color: white;
+  
+  padding-left: 1rem;
   letter-spacing: 0.01em;
   text-shadow: 0 0 5px #ff7bac, 0 0 10px #ff7bac, 0 0 20px #ff7bac,
     0 0 40px #ff7bac, 0 0 80px #ff7bac, 0 0 90px #ff7bac, 0 0 100px #ff7bac,
@@ -113,3 +115,38 @@ a.circle {
 }
 
 
+/*MEDIA QUERIES */
+@media screen and (max-width:768px)
+{
+  .header 
+  {
+    
+    justify-content: space-between;
+    background-color: black;
+    align-items: center;
+    padding-right:  5rem;
+    font-size: 20px;
+  }
+  .middle-header
+  {
+    padding-right: 5rem;
+  }
+}
+
+@media screen and (max-width:600px)
+{
+  
+  .logo {
+    font-size: 1.1rem;
+    padding-top: 0.5rem;
+  }
+  .fa-search 
+  {
+    font-size: 20px;
+  }
+  .middle-header
+{
+  margin-right: 1.6rem;
+}
+
+}

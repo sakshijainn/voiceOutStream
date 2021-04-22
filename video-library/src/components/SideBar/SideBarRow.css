@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     padding: 10px 20px;
+    text-decoration: none;
    
   
 }
@@ -12,19 +13,17 @@
 {
    
     font-size: large !important;
+    text-decoration: none;
 }
-.sideBarRow:hover 
+.sideBarRow:hover , .link
 {
-    background-color: lightgray;
+   
     cursor: pointer;
     text-decoration: none;
     color: black;
 }
 
-.sideBarRow .selected 
-{
-    background-color: lightgray;
-}
+
 
 .sidebarTitle
 {

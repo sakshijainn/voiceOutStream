@@ -1,0 +1,36 @@
+.videometadata
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.top >div 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.middle
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.image-div 
+{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.iconn 
+{
+    width: 80px;
+	height: 80px;
+  border-radius: 50px; 
+  margin: 10px 60px;
+}

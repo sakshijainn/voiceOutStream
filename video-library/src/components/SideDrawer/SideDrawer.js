@@ -1,17 +1,20 @@
-import React from 'react'
-import SideBarRow from "./SideBarRow";
-import "./SideBar.css"
+import React,{useState} from 'react'
+import "./SideDrawer.css"
+import SideBarRow from "../SideBar/SideBarRow";
+import "../SideBar/SideBar";
 import {Link} from "react-router-dom";
-
-function SideBar() {
+function SideDrawer() {
+    
     return (
+       
+        <nav className="side-drawer">
         <div className="sidebarComp">
-        <Link className="link"  to="/">
+        <Link to="/">
         <SideBarRow selected icon={<i class="fa fa-home" aria-hidden="true"></i>} title="Home"/>
         </Link>
         
-        <Link className="link" to="/trending">
-        <SideBarRow icon={<i style={{textDecoration:"none"}} class="fa fa-fire" aria-hidden="true"></i>} title="Trending"/>
+        <Link to="/trending">
+        <SideBarRow icon={<i class="fa fa-fire" aria-hidden="true"></i>} title="Trending"/>
         </Link>
         
         <SideBarRow icon={<i class="fa fa-play" aria-hidden="true"></i>}title="Subscription"/>
@@ -25,7 +28,12 @@ function SideBar() {
            
            
         </div>
+        </nav>
+      
     )
 }
 
-export default SideBar
+export default SideDrawer
+
+
+

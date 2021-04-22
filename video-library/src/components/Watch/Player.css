@@ -1,0 +1,21 @@
+.player-container>div
+{
+    margin-bottom:1.4rem;
+}
+
+
+
+.watchscreen-player
+{
+    height: 60vh;
+    background-color: #353946;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.watchscreen-player iframe 
+{
+    width: 100%;
+    height: 100%;
+}
+
+

@@ -3,11 +3,13 @@ import React, { useEffect} from "react";
 import axios from "axios";
 import setupMockVideoServer from "../../server/mock-server";
 import {useVideo} from "../../context/VideoContext"
+import { Link, useHistory  } from "react-router-dom";
 
 
 
 
 function VideoData() {
+    const history = useHistory();
     const {state:{videos},dispatch} = useVideo();
     useEffect(() => {
         (async function () {
@@ -21,19 +23,21 @@ function VideoData() {
           }
         })();
       }, [videos]);
+    
+      
 
     return (
         <div className="recommendedVideos">
             <h6>Recommended</h6>
-            <div className="recommendedVideos_video">
+            <div className="recommendedVideos_video" >
+           
                {videos.map((item)=>(
-                  <div className="videoCard">
-                    <iframe className="thumbnail"
-                    src={`https://www.youtube.com/embed/${item.id}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    title="Embedded youtube"/>
+                  <div className="videoCard" >
+
+                
+                    <img onClick={()=>{history.push(`/watch/${item.id}`)}} className="thumbnail" src={item.thumbnail}/>
+                
+                    
                     <div className="video_info">
                     
                     <div className="avatar">
