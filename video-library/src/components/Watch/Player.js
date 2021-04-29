@@ -5,7 +5,7 @@ import VideoMetaData from "./VideoMetaData";
 import "./Player.css";
 function Player() {
   const { id } = useParams();
-  console.log(id);
+  
 
   return (
     <div className="player-container">

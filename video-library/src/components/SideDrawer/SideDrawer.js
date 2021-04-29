@@ -9,11 +9,11 @@ function SideDrawer() {
        
         <nav className="side-drawer">
         <div className="sidebarComp">
-        <Link to="/">
+        <Link className="link" to="/">
         <SideBarRow selected icon={<i class="fa fa-home" aria-hidden="true"></i>} title="Home"/>
         </Link>
         
-        <Link to="/trending">
+        <Link className="link" to="/trending">
         <SideBarRow icon={<i class="fa fa-fire" aria-hidden="true"></i>} title="Trending"/>
         </Link>
         

@@ -135,6 +135,13 @@ a.circle {
 
 @media screen and (max-width:600px)
 {
+  .header 
+  {
+    
+    justify-content: space-evenly;
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+  }
   
   .logo {
     font-size: 1.1rem;

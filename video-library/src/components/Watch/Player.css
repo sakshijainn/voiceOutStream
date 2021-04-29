@@ -1,3 +1,13 @@
+.player-container
+{
+    border-radius: 16px;
+background: #F9F9F9;
+box-shadow:  30px 30px 60px #d4d4d4,
+             -30px -30px 60px #ffffff;
+             padding-left: 0.1rem;
+             padding-right: 0.1rem;
+             padding-bottom: 0.2rem;
+}
 .player-container>div
 {
     margin-bottom:1.4rem;
@@ -10,7 +20,7 @@
     height: 60vh;
     background-color: #353946;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 .watchscreen-player iframe 
 {

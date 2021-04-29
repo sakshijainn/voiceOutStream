@@ -12,6 +12,7 @@ const VideoContext = createContext();
 export function VideoProvider({ children }) {
   const [state, dispatch] = useReducer(videoReducer, {
     videos: [],
+    likedVideos:[],
    
   });
 

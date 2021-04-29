@@ -19,7 +19,7 @@ function Header() {
       
       </div>
       {isOpened && <SideDrawer/> }
-        <Link to="/"> 
+        <Link className="link" to="/"> 
         <h1 className="logo">
         {" "}
         voiceOut<i class="fa fa-gratipay" aria-hidden="true"></i>
@@ -32,7 +32,7 @@ function Header() {
       <div className="middle-header">
         <input  type="text" value={inputSearch} onChange={e=>setSearch(e.target.value)} placeholder="search"/>  
 
-        <Link to={`/search/{inputSearch}`}><i class="fa fa-search" aria-hidden="true"></i></Link>
+       
       
        
        

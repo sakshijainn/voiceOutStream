@@ -1,14 +1,31 @@
 import React from 'react'
 import "./VideoMetaData.css";
+import {useVideo} from "../../context/VideoContext";
+import { useParams } from "react-router";
+import { Link  } from "react-router-dom";
 function VideoMetaData() {
+
+    const {dispatch} = useVideo();
+
+      const { id } = useParams();
+      
     return (
         <div className="videometadata">
             <div className="top">
 
                 <h4>Video Title</h4>
                 <div>
-                    <div><p>10k subscribers.2months ago</p></div>
-                    <div><button>like</button> <button>unlike</button></div>
+                    <div><p className="infoP">10k Subscribers . 2 Months Ago</p></div>
+                    <div class="btn-container">
+            
+                    <Link to="/liked-videos">
+                    <button onClick={() => dispatch({ type: "LIKE", payload: id })} >like</button>
+                    
+                    </Link>
+                   
+                    
+                   
+                     <button>Watch <i class="fa fa-clock-o" aria-hidden="true"></i></button></div>
                 </div>
                    
             </div>
@@ -17,15 +34,15 @@ function VideoMetaData() {
             <div className="image-div">   
             <div> <img className="iconn" src="https://www.youtube.com/img/trending/avatar/trending_avatar.png"></img>
             </div>
-            <div><h5>SakshiJain</h5> <h5>10k subscribers</h5></div>
+            <div class="subscriber-content"><h5>VoiceOut</h5> <h5>10k Subscribers</h5></div>
            
             </div>
             <div>
-            <h5><button>Subscribe</button></h5></div>
+            <button className="subscribe">Subscribe</button></div>
                
                    
           </div>
-          <hr/>  
+         
           <div className="bottom"></div>
         </div>
     )

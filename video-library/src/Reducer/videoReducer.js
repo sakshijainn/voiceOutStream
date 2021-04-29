@@ -10,6 +10,23 @@
           ...state,
           videos: payload
         };
+
+
+      case "LIKE":
+        {
+        console.log(payload);
+        return {
+          ...state,
+          likedVideos: state.likedVideos.includes(payload) ?
+            state.likedVideos.filter((id) => id !== payload) :
+            state.likedVideos.concat(payload)
+        }
+      }
+      
+     
+
+      
+      
   
      
   
