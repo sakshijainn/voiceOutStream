@@ -16,7 +16,7 @@ export function VideoProvider({ children }) {
     likedVideos:[],
     watchLater:[],
     historyVideos:[],
-    playlist: [{ id: uuidv4(), name: 'fav', videos: [] }],
+    playlist: [{ id: uuidv4(), name: 'sakshijain', videos: [] }],
     keyword: ''
    
   });

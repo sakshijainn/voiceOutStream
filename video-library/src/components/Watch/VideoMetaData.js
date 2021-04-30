@@ -1,15 +1,19 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import "./VideoMetaData.css";
 import {useVideo} from "../../context/VideoContext";
 import { useParams } from "react-router";
 import { Link  } from "react-router-dom";
+import PlaylistModal from "../PlaylistModal/PlaylistModal";
 function VideoMetaData() {
 
     
     const {state:{playlist},dispatch} = useVideo();
 
+    const[toggle,setToggle]= useState(false);
+
     console.log(playlist)
 
+ 
 
    
 
@@ -51,16 +55,27 @@ function VideoMetaData() {
            
             </div>
             <div>
-            <Link to="/playlist"> <button
-            onClick={() => dispatch({ type: "CREATE_NEW_PLAYLIST", payload: id })}
-            className="subscribe">Save+</button></Link>
-           
+            <button
+            // onClick={() =>{
+            //   setToggle(toggle=>!toggle)
+            //   dispatch({ 
+              
+            //   type: "CREATE_NEW_PLAYLIST", payload: id })
+            // }}
+            className="subscribe">Save+</button>
+            
+
+
             </div>
                
                    
           </div>
-         
-          <div className="bottom"></div>
+
+          <div className="bottom">
+          {toggle && <PlaylistModal/>}
+          </div>
+        
+          
         </div>
     )
 }

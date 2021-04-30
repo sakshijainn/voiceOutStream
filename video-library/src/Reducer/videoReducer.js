@@ -45,8 +45,13 @@
 
         case "CREATE_NEW_PLAYLIST":
           return { ...state, playlist: [...state.playlist, payload] }
-          
 
+
+
+        case "ADD_TO_PLAYLIST":
+          console.log(payload);
+          
+          
     
 
       case "SEARCH":

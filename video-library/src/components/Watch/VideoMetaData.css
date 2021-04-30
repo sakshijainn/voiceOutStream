@@ -61,3 +61,24 @@
 {
   margin-left:1rem;
 }
+
+@media screen and  (max-width:600px)
+{
+    .top 
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly
+    }
+
+    .btn-container
+    {
+        display: flex;
+    }
+
+    .btn-container button 
+    {
+        font-size: 1rem;
+        
+    }
+}
