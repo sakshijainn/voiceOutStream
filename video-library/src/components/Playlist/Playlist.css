@@ -1,0 +1,19 @@
+.playlist-container
+{
+    width:200px;
+    height:100px;
+    z-index: 10;
+    background-color: red;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.playlist-container div 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

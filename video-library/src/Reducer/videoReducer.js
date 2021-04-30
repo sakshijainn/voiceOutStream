@@ -22,7 +22,43 @@
             state.likedVideos.concat(payload)
         }
       }
-      
+
+      case "WATCH_LATER":
+        return {
+          ...state,
+          watchLater: state.watchLater.includes(payload) ?
+            state.watchLater.filter((id) => id !== payload) :
+            state.watchLater.concat(payload)
+        };
+
+      case "HISTORY":
+        return {
+          ...state,
+          historyVideos: state. historyVideos.some((videoId) => videoId === payload)
+            ? state. historyVideos
+                .filter((videoId) => videoId !== payload)
+                .concat(payload)
+            : state. historyVideos.concat(payload),
+        };
+
+
+
+        case "ADD_NEW_PLAYLIST":
+          return { ...state, playlist: [...state.playlist, payload] }
+          
+
+    
+
+      case "SEARCH":
+            return { ...state, keyword: payload.toLowerCase()}
+
+      case "CLEAR_SEARCH":
+              return { ...state, keyword: '' }
+           
+
+     
+
+    
      
 
       

@@ -5,9 +5,17 @@ import { useParams } from "react-router";
 import { Link  } from "react-router-dom";
 function VideoMetaData() {
 
-    const {dispatch} = useVideo();
+    
+    const {state:{playlist},dispatch} = useVideo();
+
+    console.log(playlist)
+
+
+   
 
       const { id } = useParams();
+
+
       
     return (
         <div className="videometadata">
@@ -24,8 +32,13 @@ function VideoMetaData() {
                     </Link>
                    
                     
+                   <Link to="/watchList">
+                   <button onClick={() => dispatch({ type: "WATCH_LATER", payload: id })}>Watch <i class="fa fa-clock-o" aria-hidden="true"></i></button>
+                   </Link>
                    
-                     <button>Watch <i class="fa fa-clock-o" aria-hidden="true"></i></button></div>
+                     
+                     
+                     </div>
                 </div>
                    
             </div>
@@ -38,7 +51,11 @@ function VideoMetaData() {
            
             </div>
             <div>
-            <button className="subscribe">Subscribe</button></div>
+            <Link to="/playlist"> <button
+            onClick={() => dispatch({ type: "ADD_NEW_PLAYLIST", payload: id })}
+            className="subscribe">Save+</button></Link>
+           
+            </div>
                
                    
           </div>

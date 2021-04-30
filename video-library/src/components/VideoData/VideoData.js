@@ -4,13 +4,16 @@ import axios from "axios";
 import setupMockVideoServer from "../../server/mock-server";
 import {useVideo} from "../../context/VideoContext"
 import { Link, useHistory  } from "react-router-dom";
+import { useParams } from "react-router";
 
 
 
 
 function VideoData() {
     const history = useHistory();
-    const {state:{videos},dispatch} = useVideo();
+    const {state,dispatch} = useVideo();
+    console.log(state.keyword);
+    const { id } = useParams();
     useEffect(() => {
         (async function () {
           try {
@@ -22,16 +25,34 @@ function VideoData() {
             console.log("error");
           }
         })();
-      }, [videos]);
-    
+      }, [state.videos]);
+
+
+      const FilteredData = (state, data) => {
+
+        let getVideos = [...data];
+
+        if (state.keyword) {
+          getVideos = getVideos.filter((video) => video.title.toLowerCase().includes(state.keyword));
+        }
+
+        return getVideos;
+    }
       
+          const filteredVideos = FilteredData(state, state.videos)
+
+          console.log(filteredVideos)
+
+    
+     
 
     return (
         <div className="recommendedVideos">
             <h6>Recommended</h6>
             <div className="recommendedVideos_video" >
+            
            
-               {videos.map((item)=>(
+               {filteredVideos.map((item)=>(
                   <div className="videoCard" >
 
                 

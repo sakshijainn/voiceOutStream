@@ -3,13 +3,21 @@ import "./Header.css";
 import { Link  } from "react-router-dom";
 import DrawerToggleButton from "../SideDrawer/DrawerToggleButton";
 import SideDrawer from "../SideDrawer/SideDrawer";
+import {useVideo} from "../../context/VideoContext";
 
 function Header() {
-  const[inputSearch,setSearch]= useState("");
+  const { state, dispatch } = useVideo();
   const [isOpened, setIsOpened] = useState(false);
   function toggle() {
     setIsOpened(wasOpened => !wasOpened);
   }
+  const handleSearch = (e) => {
+    dispatch({ type: "SEARCH", payload: e.target.value })
+}
+
+const clearSearch = () => {
+    dispatch({ type: "CLEAR_SEARCH" })
+}
 
   return (
     
@@ -30,7 +38,7 @@ function Header() {
       </div>
     
       <div className="middle-header">
-        <input  type="text" value={inputSearch} onChange={e=>setSearch(e.target.value)} placeholder="search"/>  
+        <input  type="text" value={state.keyword} onChange={handleSearch} placeholder="search"/>  
 
        
       

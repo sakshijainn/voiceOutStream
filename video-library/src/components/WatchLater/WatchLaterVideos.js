@@ -2,27 +2,26 @@ import React from 'react'
 import {useVideo} from "../../context/VideoContext";
 import { useHistory } from "react-router-dom";
 
-function LikedVideos() {
-    const {state:{videos,likedVideos}} = useVideo();
+
+function WatchLaterVideos() {
+    const {state:{videos, watchLater}} = useVideo();
     const history = useHistory();
     
-      console.log("hello")
-      console.log(likedVideos);
-      const videoList = likedVideos.map((itemId)=>{
+      console.log("hy")
+      console.log( watchLater);
+      const watchedVideoList =  watchLater.map((itemId)=>{
 
         return videos.find((video) => video.id === itemId);
      
      
        })
      
-    
-     
     return (
         <div className="recommendedVideos">
-        <h2>Liked Videos</h2>
+        <h2>Watched Videos</h2>
         <div className="recommendedVideos_video" >
        
-           {videoList.map((item)=>(
+           {watchedVideoList.map((item)=>(
               <div className="videoCard" >
 
             
@@ -50,4 +49,4 @@ function LikedVideos() {
     )
 }
 
-export default LikedVideos
+export default WatchLaterVideos

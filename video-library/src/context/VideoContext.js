@@ -6,6 +6,7 @@ import {
 } from "react";
 import  videosInfo from "../database/videosInfo";
 import videoReducer from "../Reducer/videoReducer";
+import { v4 as uuidv4 } from 'uuid'
 
 const VideoContext = createContext();
 
@@ -13,6 +14,10 @@ export function VideoProvider({ children }) {
   const [state, dispatch] = useReducer(videoReducer, {
     videos: [],
     likedVideos:[],
+    watchLater:[],
+    historyVideos:[],
+    playlist: [{ id: uuidv4(), name: 'fav', videos: [] }],
+    keyword: ''
    
   });
 
