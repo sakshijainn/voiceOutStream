@@ -52,7 +52,7 @@ function VideoMetaData() {
             </div>
             <div>
             <Link to="/playlist"> <button
-            onClick={() => dispatch({ type: "ADD_NEW_PLAYLIST", payload: id })}
+            onClick={() => dispatch({ type: "CREATE_NEW_PLAYLIST", payload: id })}
             className="subscribe">Save+</button></Link>
            
             </div>

@@ -43,7 +43,7 @@
 
 
 
-        case "ADD_NEW_PLAYLIST":
+        case "CREATE_NEW_PLAYLIST":
           return { ...state, playlist: [...state.playlist, payload] }
           
 
