@@ -6,27 +6,29 @@ import { Link } from "react-router-dom";
 import Modal from "../Modal/Modal";
 function VideoMetaData() {
   const {
-    state: { playlist },
+    state: { playlist, videos },
     dispatch,
   } = useVideo();
 
-  const [toggle, setToggle] = useState(false);
   const [show, setShow] = useState(false);
 
   const openModal = () => setShow(true);
   const closeModal = () => setShow(false);
 
-  console.log(playlist);
-
   const { id } = useParams();
+  const videoMetaDataDetails = videos.find((video) => video.id === id);
+
+  console.log(videoMetaDataDetails);
 
   return (
     <div className="videometadata">
       <div className="top">
-        <h4>Video Title</h4>
+        <h4>{videoMetaDataDetails.title}</h4>
         <div>
           <div>
-            <p className="infoP">10k Subscribers . 2 Months Ago</p>
+            <p className="infoP">
+              {videoMetaDataDetails.views} . {videoMetaDataDetails.timestamp}
+            </p>
           </div>
           <div class="btn-container">
             <Link to="/liked-videos">
@@ -50,18 +52,15 @@ function VideoMetaData() {
         <div className="image-div">
           <div>
             {" "}
-            <img
-              className="iconn"
-              src="https://www.youtube.com/img/trending/avatar/trending_avatar.png"
-            ></img>
+            <img className="iconn" src={videoMetaDataDetails.imageSrc}></img>
           </div>
           <div class="subscriber-content">
-            <h5>VoiceOut</h5> <h5>10k Subscribers</h5>
+            <h5>{videoMetaDataDetails.channel}</h5> <h5>10k Subscribers</h5>
           </div>
         </div>
         <div>
           {!show && <button onClick={openModal}>Save</button>}
-          <Modal closeModal={closeModal} show={show} />
+          <Modal closeModal={closeModal} show={show} videoId={id} />
         </div>
       </div>
     </div>

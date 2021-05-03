@@ -1,19 +1,12 @@
-.playlist-container
+.video-iframe
 {
-    width:200px;
-    height:100px;
-    z-index: 10;
-    background-color: red;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 200px;
+    width: 300px;
 }
-.playlist-container div 
+
+.playlistcard
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    border: 1px solid black;
+    padding: 2rem;
+    border: 10px;
 }

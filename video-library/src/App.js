@@ -9,7 +9,7 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import Liked from "./components/Liked/Liked";
 import WatchLater from "./components/WatchLater/WatchLater";
 import HistoryComp from "./components/History/HistoryComp";
-import Playlist from "./components/Playlist/Playlist";
+import PlaylistContainer from "./components/Playlist/PlaylistContainer";
 function App() {
   
   return (
@@ -22,7 +22,7 @@ function App() {
 
        <Route path="/watch/:id">  <Header /><Watch/></Route>
        <Route path="/history"><Header/><HistoryComp/></Route>
-       <Route path="/playlist"><Playlist/></Route>
+       <Route path="/playlist"> <Header/><PlaylistContainer/></Route>
        <Route path="/watchList">  <Header /> <WatchLater/> </Route>
        <Route path="/trending">  <Header /><Trending/></Route>
        <Route path="/liked-videos">  <Header /><Liked/></Route>

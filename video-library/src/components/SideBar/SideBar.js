@@ -27,8 +27,13 @@ function SideBar() {
         <Link className="link"  to="/liked-videos">
         <SideBarRow icon={<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>} title="Liked Videos"/>
         </Link>
-        
+
+
+        <Link className="link" to= "/playlist">
         <SideBarRow icon={<i class="fa fa-music" aria-hidden="true"></i>} title="My Playlist"/>
+        </Link>
+        
+        
         <hr/>
       
            

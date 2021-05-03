@@ -44,19 +44,52 @@
 
 
         case "CREATE_NEW_PLAYLIST":
-          return { ...state, playlist: [...state.playlist, payload] }
+          return { ...state, playlist: [...state.playlist, payload] 
+         
+          }
+         
+          /*playlist: [{ id: uuidv4(), name: 'sakshijain', videos: [{id,title,imageSrc,..}] }],*/
+
+
+          // case "ADD_TO_PLAYLIST":
+          //   return{
+          //     ...state,playlist: state.playlist.map((singlePlaylist)=>{
+          //     console.log(singlePlaylist) //playlistId
+          //     console.log(payload) //videoId
+
+
+
+              
+              
+             
+          //     })
+          //   }
           
-    
+
+          case "ADD_TO_PLAYLIST":
+            const { playlistID, videoId } = payload;
+
+            const singlePlaylist = [...state.playlist].map((onePlaylist) => {
+                if (onePlaylist.id === playlistID) {
+                    const videoFind = !!onePlaylist.videosAdded.find((video) => video === videoId);
+                    if (videoFind) {
+                        const videoFiltered = onePlaylist.videos.filter((video) => video !== videoId)
+                        return { ...onePlaylist, videosAdded: videoFiltered }
+                    }
+                    else {
+                        const newPlaylist = { ...onePlaylist, videosAdded: [...onePlaylist.videosAdded, videoId] }
+                        return newPlaylist
+                    }
+                }
+                return onePlaylist
+            })
+
+            return { ...state, playlist: singlePlaylist }
 
 
-        
-
-
-
-
-        case "ADD_TO_PLAYLIST":
-          console.log(payload);
           
+         
+      
           
     
 
