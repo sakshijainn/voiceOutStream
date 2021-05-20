@@ -79,6 +79,7 @@ a.circle {
     align-items: center;
     width: 30%;
     
+    
 }
 .middle-header>input
 {
@@ -87,6 +88,11 @@ a.circle {
     padding: 0.5rem;
     outline: none;
     border-radius: 5px;
+}
+.button-login
+{
+  margin-left: 2rem;
+  color:white;
 }
 .middle-header> .fa-search{
     background-color: #DD6A95;

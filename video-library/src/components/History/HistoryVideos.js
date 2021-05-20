@@ -1,10 +1,10 @@
 import React from 'react'
 import {useVideo} from "../../context/VideoContext";
-import { useHistory } from "react-router-dom";
+import {useNavigate,Link } from "react-router-dom";
 
 function HistoryVideos() {
     const { state:{videos,historyVideos} } = useVideo();
-    const history = useHistory();
+    const history = useNavigate();
     const historyList = historyVideos.map((itemId)=>{
 
         return videos.find((video) => video.id === itemId);
@@ -19,9 +19,9 @@ function HistoryVideos() {
            {historyList.map((item)=>(
               <div className="videoCard" >
 
-            
-                <img onClick={()=>{history.push(`/watch/${item.id}`)}} className="thumbnail" src={item.thumbnail}/>
-            
+              <Link to={{ pathname: `/watch/${item.id}` }}>
+                <img  className="thumbnail" src={item.thumbnail}/>
+            </Link>
                 
                 <div className="video_info">
                 

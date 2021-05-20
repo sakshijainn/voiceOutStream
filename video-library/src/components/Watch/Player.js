@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import VideoMetaData from "./VideoMetaData";
-
+import {useVideo} from "../../context/VideoContext"
 import "./Player.css";
 function Player() {
   const { id } = useParams();
+  console.log(id);
   
-
   return (
     <div className="player-container">
       <div className="watchscreen-player">

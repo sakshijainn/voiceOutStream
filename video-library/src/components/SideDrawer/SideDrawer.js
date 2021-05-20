@@ -19,10 +19,25 @@ function SideDrawer() {
         
         <SideBarRow icon={<i class="fa fa-play" aria-hidden="true"></i>}title="Subscription"/>
         <hr/>
+
+        <Link className="link" to="/history">
+
         <SideBarRow icon={<i class="fa fa-history" aria-hidden="true"></i>}title="History"/>
+        </Link>
+        
+        <Link className="link" to="/watchList">
         <SideBarRow icon={<i class="fa fa-clock-o" aria-hidden="true"></i>} title="Watch later"/>
+        </Link>
+        
+        <Link className="link" to="/liked-videos">
         <SideBarRow icon={<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>} title="Liked Videos"/>
+        </Link>
+
+        <Link className="link" to="/login">
         <SideBarRow icon={<i class="fa fa-music" aria-hidden="true"></i>} title="My Playlist"/>
+        </Link>
+       
+        
         <hr/>
       
            

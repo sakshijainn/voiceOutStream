@@ -29,7 +29,7 @@ function SideBar() {
         </Link>
 
 
-        <Link className="link" to= "/playlist">
+        <Link className="link" to= "/login">
         <SideBarRow icon={<i class="fa fa-music" aria-hidden="true"></i>} title="My Playlist"/>
         </Link>
         

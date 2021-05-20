@@ -3,14 +3,14 @@ import React, { useEffect} from "react";
 import axios from "axios";
 import setupMockVideoServer from "../../server/mock-server";
 import {useVideo} from "../../context/VideoContext"
-import { Link, useHistory  } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router";
 
 
 
 
 function VideoData() {
-    const history = useHistory();
+    const history = useNavigate();
     const {state,dispatch} = useVideo();
     console.log(state.keyword);
     const { id } = useParams();
@@ -21,7 +21,9 @@ function VideoData() {
             
             const response = await axios.get("/api/videos");
            dispatch({ type: "DATA_FROM_SERVER", payload: response.data.videos});
-          } catch (error) {
+          } 
+          
+          catch (error) {
             console.log("error");
           }
         })();
@@ -48,15 +50,17 @@ function VideoData() {
 
     return (
         <div className="recommendedVideos">
-            <h6>Recommended</h6>
+            <h3>Recommended</h3>
             <div className="recommendedVideos_video" >
             
            
                {filteredVideos.map((item)=>(
-                  <div className="videoCard" >
+                  <div key={item.id} className="videoCard" >
 
                 
-                    <img onClick={()=>{history.push(`/watch/${item.id}`)}} className="thumbnail" src={item.thumbnail}/>
+                  <Link to={{ pathname: `/watch/${item.id}` }}>
+                    <img  className="thumbnail" src={item.thumbnail}/>
+                </Link>
                 
                     
                     <div className="video_info">

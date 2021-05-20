@@ -11,7 +11,7 @@ function LandingPage() {
         <video  autoPlay loop muted>
         <source src={sample} type='video/mp4' />
     </video>
-    <div class="text">
+    <div className="text">
       <h2>Learn to Write </h2> 
       <h3>Your Own Story</h3>
       <p>By screaming out your thoughts. Explore the inner you in.</p>
