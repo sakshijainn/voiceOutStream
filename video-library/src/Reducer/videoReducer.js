@@ -67,30 +67,27 @@ export default function videoReducer(state, { type, payload }) {
 
     case "DELETE_PLAYLIST": {
       const deletePlaylist = [...state.playlist].filter(
-        (all) => all.id !== payload
+        (onePlaylist) => onePlaylist.id !== payload
       );
       return { ...state, playlist: deletePlaylist };
     }
 
     case "REMOVE_VIDEO_FROM_PLAYLIST": {
       const { playlistId, videoID } = payload;
-
-      const removeVideoFromPlaylist = [...state.playlist].map((all) => {
-        if (all.id === playlistId) {
-          const videoFound = !!all.videos.find((video) => video === videoID);
-          if (videoFound) {
-            const filteredVideo = all.videos.filter(
-              (video) => video !== videoID
-            );
-            return { ...all, videos: filteredVideo };
-          } else {
-            return all;
-          }
+      console.log("playlistId:", playlistId)
+      console.log("videoId",videoID);
+      //map playlist :
+      const removeVideoFromPlaylist = [...state.playlist].map((onePlaylist)=>{
+        //match playlist-ids
+        if(onePlaylist.id ===playlistId)
+        {
+          const filteredVideo = onePlaylist.videosAdded.filter( (video) => video !== videoID );
+          return { ...onePlaylist, videosAdded: filteredVideo };
         }
-        return all;
-      });
-
+        return onePlaylist;
+      })
       return { ...state, playlist: removeVideoFromPlaylist };
+      
     }
 
     case "SEARCH":

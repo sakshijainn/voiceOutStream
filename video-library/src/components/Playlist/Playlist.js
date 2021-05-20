@@ -5,13 +5,13 @@ import { useParams } from "react-router";
 
 function Playlist() {
   const { state, dispatch } = useVideo();
-  const { playlist } = state;
   const { id } = useParams();
+ 
 
   const deleteVideoFromPlaylist = (playlistId, id) => {
     dispatch({
       type: "REMOVE_VIDEO_FROM_PLAYLIST",
-      payload: { playlistId, id },
+      payload: { playlistId, videoID: id },
     });
   };
 
