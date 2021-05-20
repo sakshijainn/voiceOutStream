@@ -32,7 +32,7 @@ function Playlist() {
         {state.playlist.map(({ id,name, videosAdded }) => {
           return videosAdded.map((videoId) => {
             const check = state.videos.find((video) => video.id === videoId);
-
+             console.log(check)
             return (
               <div className="playlistcard">
                 <div className="videoCard">
@@ -65,7 +65,7 @@ function Playlist() {
                     </button>
                     <button
                       onClick={() =>
-                        deleteVideoFromPlaylist(id, videoId)
+                        deleteVideoFromPlaylist(id, check.id)
                       }
                     >
                       <i class="fa fa-trash" aria-hidden="true"></i> Video
