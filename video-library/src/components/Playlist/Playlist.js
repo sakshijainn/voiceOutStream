@@ -15,18 +15,21 @@ function Playlist() {
     });
   };
 
+
+
   const deletePlaylist = (id) => {
     dispatch({ type: "DELETE_PLAYLIST", payload: id });
   };
 
-  const findVideosInPlaylist = playlist.filter((all) => all.id === id);
-  console.log(findVideosInPlaylist);
+  
+
+
 
   return (
     <div className="recommendedVideos">
       <h2>Playlists</h2>
       <div className="recommendedVideos_video">
-        {state.playlist.map(({ name, videosAdded }) => {
+        {state.playlist.map(({ id,name, videosAdded }) => {
           return videosAdded.map((videoId) => {
             const check = state.videos.find((video) => video.id === videoId);
 
@@ -56,13 +59,13 @@ function Playlist() {
                   </div>
                   <div className="buttons-container">
                     <button
-                      onClick={() => deletePlaylist(findVideosInPlaylist[0].id)}
+                      onClick={() => deletePlaylist(id)}
                     >
                       <i class="fa fa-trash" aria-hidden="true"></i> Playlist
                     </button>
                     <button
                       onClick={() =>
-                        deleteVideoFromPlaylist(findVideosInPlaylist[0].id, id)
+                        deleteVideoFromPlaylist(id, videoId)
                       }
                     >
                       <i class="fa fa-trash" aria-hidden="true"></i> Video
