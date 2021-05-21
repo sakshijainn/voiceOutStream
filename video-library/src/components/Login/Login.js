@@ -8,9 +8,8 @@ import "./Login.css"
 
 function Login() {
 
-    const {state} = useLocation();
+   
     const{isUserLogin, loginUserWithCredentials} = useAuth();
-    const navigate = useNavigate();
     const[userName,setUserName] = useState("");
     const[password,setPassword] = useState("");
 
@@ -59,16 +58,8 @@ function Login() {
     function loginHandler()
     {
 
-        if(loginUserWithCredentials(userName,password) )
-        {
-        console.log(" ghuss jaa")
-        navigate(state?.from ? state.from :"/playlist")
-        }
-        else 
-        {
-        console.log("bhaag")
-        navigate(state?.from ? state.from :"/login")
-        }
+        loginUserWithCredentials(userName,password) 
+      
            
     }
    

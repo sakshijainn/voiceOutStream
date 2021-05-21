@@ -16,7 +16,6 @@ import SignUp from "./components/SignUp/SignUp"
 function App() {
   return (
     <div className="app">
-      <Router>
       <Header />
         <Routes>
           <Route path="/watch/:id" element= {<Watch/>}></Route>
@@ -30,7 +29,7 @@ function App() {
           <Route path="/home" element={<Main />}></Route>
           <Route path="/" element={<LandingPage />}></Route>
         </Routes>
-      </Router>
+      
     </div>
   );
 }
