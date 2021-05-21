@@ -1,8 +1,8 @@
 import React,{useState} from 'react'
 import {useAuth} from "../../context/AuthContext";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate,Link } from "react-router-dom";
 import "./Login.css"
-import { user } from '../../context/fakeAuthApi';
+
 
 
 
@@ -38,13 +38,16 @@ function Login() {
                  <a href="#">Forgot Password?</a>
               </div>
               <div className="btn">
-                 <div class="inner"></div>
+                 <div className="inner"></div>
                <button onClick={loginHandler}>
                     {isUserLogin ?"LogIn" :"LogOut"}
                 </button>
               </div>
               <div className="signup-link">
-                 Not a member? <a href="#">Signup now</a>
+                 Not a member? 
+                 <Link to="/signup" className="link">
+                 <a href="#">Signup now</a>
+                 </Link>
               </div>
            </form>
         </div>

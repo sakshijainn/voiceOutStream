@@ -42,20 +42,14 @@ function Header() {
           onChange={handleSearch}
           placeholder="search"
         />
-        <Link to="/login" className="link">
-          <button className="button-login">Login</button>
-        </Link>
+      
       </div>
 
       <div className="right-header">
-        <a href="https://twitter.com/bradenhamm" class="circle">
-          <img
-            height="32"
-            width="32"
-            src="https://pbs.twimg.com/profile_images/1375107782244925448/svTFu_ze.jpg"
-            alt="Sakshi Jain"
-          />
-        </a>
+      <Link to="/login" className="link">
+      <button className="button-login">Login</button>
+    </Link>
+        
       </div>
     </div>
   );

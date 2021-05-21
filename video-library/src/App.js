@@ -12,6 +12,7 @@ import WatchLater from "./components/WatchLater/WatchLater";
 import HistoryComp from "./components/History/HistoryComp";
 import PlaylistContainer from "./components/Playlist/PlaylistContainer";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import SignUp from "./components/SignUp/SignUp"
 function App() {
   return (
     <div className="app">
@@ -21,6 +22,7 @@ function App() {
           <Route path="/watch/:id" element= {<Watch/>}></Route>
           <Route path="/history" element ={ <HistoryComp />}></Route>
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element = {<SignUp/>}></Route>
           <PrivateRoute path="/playlist" element={<PlaylistContainer/>}></PrivateRoute>
           <Route path="/watchList" element={<WatchLater />}></Route>
           <Route path="/trending" element={<Trending />}></Route>
