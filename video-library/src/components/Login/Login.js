@@ -1,28 +1,74 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {useAuth} from "../../context/AuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
+import "./Login.css"
+import { user } from '../../context/fakeAuthApi';
 
 
 
 function Login() {
 
     const {state} = useLocation();
+    const{isUserLogin, loginUserWithCredentials} = useAuth();
     const navigate = useNavigate();
-    const{isUserLogin, login} = useAuth();
+    const[userName,setUserName] = useState("");
+    const[password,setPassword] = useState("");
 
+    
+
+    return (
+        <div className="center">
+        <input type="checkbox" id="show"/>
+        <label for="show" class="show-btn">View Playlists?</label>
+        <div className="container">
+           <label for="show" class="close-btn fa fa-times" title="close"></label>
+           <div className="text">
+              Login 
+           </div>
+           <form action="#">
+              <div className="data">
+                 <label>UserName</label>
+                 <input onChange={(e)=>setUserName(e.target.value)} type="text" required/>
+              </div>
+              <div className="data">
+                 <label>Password</label>
+                 <input onChange={(e)=>{setPassword(e.target.value)}} type="password" required/>
+              </div>
+              <div class="forgot-pass">
+                 <a href="#">Forgot Password?</a>
+              </div>
+              <div className="btn">
+                 <div class="inner"></div>
+               <button onClick={loginHandler}>
+                    {isUserLogin ?"LogIn" :"LogOut"}
+                </button>
+              </div>
+              <div className="signup-link">
+                 Not a member? <a href="#">Signup now</a>
+              </div>
+           </form>
+        </div>
+     </div>
+    )
+  
+
+    
     function loginHandler()
     {
-            login("abc",123)
-            navigate(state?.from ? state.from :"/home")
+
+        if(loginUserWithCredentials(userName,password) )
+        {
+        console.log(" ghuss jaa")
+        navigate(state?.from ? state.from :"/playlist")
+        }
+        else 
+        {
+        console.log("bhaag")
+        navigate(state?.from ? state.from :"/login")
+        }
+           
     }
-    return (
-        <div style={{marginTop:"9rem"}}>
-            <h1> Chaabi Layaa Kya ???</h1>
-            <button onClick={loginHandler}>
-            {isUserLogin ?"I am Logged In" :"I am Logged Out"}
-            </button>
-        </div>
-    )
+   
 }
 
 export default Login

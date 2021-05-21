@@ -1,25 +1,33 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect } from "react";
 import { useState } from "react";
-
-const user ={
-  username:"abc",
-  password:"123"
-}
+import { useLocation, useNavigate } from "react-router";
+import { fakeAuthApi } from "./fakeAuthApi"
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isUserLogin, setLogin] = useState(false);
-  function login(username,password)
-  {
-    if(username=== user.username &&  password === user.password)
-    {
-      setLogin(true)
+  useEffect(()=>{
+    const loginStatus = JSON.parse(localStorage?.getItem("login"))
+    loginStatus?.isuUserLoggedIn&&setLogin(true)
+  },[])
+
+
+  async function loginUserWithCredentials(username, password) {
+    try {
+      const response = await fakeAuthApi(username, password);
+      if (response.success) {
+        setLogin(true);
+        localStorage?.setItem("login",JSON.stringify({isuUserLoggedIn:true}))
+      }
+    } catch (error) {
+      console.log("Sahi username password nahi pata kya?", error);
     }
+
   }
 
   return (
-    <AuthContext.Provider value={{ isUserLogin, login}}>
+    <AuthContext.Provider value={{ isUserLogin, loginUserWithCredentials }}>
       {children}
     </AuthContext.Provider>
   );
