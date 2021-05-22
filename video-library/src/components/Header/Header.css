@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  z-index:1;
+  align-items: center;
+  padding: 3px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  
+  
+  
+}
+.left-header {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+ 
+}
+
+.fa-bars,
+.fa-search,
+.fa-microphone,
+.fa-video-camera,
+.fa-bell {
+  color: white;
+  padding: 0.5rem;
+  
+}
+
+.fa-search 
+{
+  font-size: 30px;
+}
+.logo {
+  font-size: 1.6rem;
+  color: white;
+  
+  padding-left: 1rem;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 5px #ff7bac, 0 0 10px #ff7bac, 0 0 20px #ff7bac,
+    0 0 40px #ff7bac, 0 0 80px #ff7bac, 0 0 90px #ff7bac, 0 0 100px #ff7bac,
+    0 0 150px #ff7bac;
+    
+}
+.circle {
+  line-height: 0;
+  display: inline-block; 
+  margin: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%; 
+  transition: linear 0.25s;
+  height:32px;
+  width: 32px;
+}
+.circle img {
+  border-radius: 50%; 
+				  
+}
+.circle:hover {
+  transition: ease-out 0.2s;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  -webkit-transition: ease-out 0.2s;
+}
+a.circle {
+  color: transparent;
+} 
+
+.middle-header 
+{
+    display: flex;
+    align-items: center;
+    width: 30%;
+    
+    
+}
+.middle-header>input
+{
+    flex: 1;
+    border: none;
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 5px;
+}
+.button-login
+{
+  margin-left: 2rem;
+  color:white;
+}
+.middle-header> .fa-search{
+    background-color: #DD6A95;
+    color: white;
+    padding: 1px;
+    border: none;
+    outline: none;
+    font-size: 1.9rem;
+    
+}
+.middle-header> .fa-microphone
+{
+    font-size: 1.6rem;
+}
+
+.right-header
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    
+    
+    
+}
+
+
+/*MEDIA QUERIES */
+@media screen and (max-width:768px)
+{
+  .header 
+  {
+    
+    justify-content: space-between;
+    background-color: black;
+    align-items: center;
+    padding-right:  5rem;
+    font-size: 20px;
+  }
+  .middle-header
+  {
+    padding-right: 5rem;
+  }
+}
+
+@media screen and (max-width:600px)
+{
+  .header 
+  {
+    
+    justify-content: space-evenly;
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+    padding-top: 0.5rem;
+  }
+  .fa-search 
+  {
+    font-size: 20px;
+  }
+  .middle-header
+{
+  margin-right: 1.6rem;
+}
+
+}

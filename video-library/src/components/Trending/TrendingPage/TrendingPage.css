@@ -1,0 +1,76 @@
+.trending_filter
+
+{
+    display: flex;
+    align-items: center;
+    display: flex;
+    color: #606060;
+    font-size: xx-small im !important;
+}
+
+.trending_filter>h2 
+{
+    margin-left: 5px;
+    font-size: 25px;
+    color: black
+}
+.trending_filter hr 
+{
+    height: 1px;
+    border: 0;
+    background-color: lightgray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.avataricontrend
+{
+    width: 80px;
+	height: 80px;
+  border-radius: 50px; 
+  margin: 10px 60px;
+}
+
+.video-buttons 
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.video-buttons >button 
+{
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+button {
+    transition: all .5s ease;
+    color: black;
+    border: 1px solid #E06B98;
+    font-family:'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    font-size: 17px;
+    background-color : transparent;
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+}
+button:hover {
+    color: #E06B98;
+    background-color: black;
+}
+
+@media screen and (max-width:700px)
+{
+    .trending_filter
+    {
+        display: none;
+
+    }
+    .video-buttons
+    {
+        width: 100%;
+    }
+}

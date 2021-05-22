@@ -1,0 +1,88 @@
+.videometadata
+{
+    display: flex;
+    flex-direction: column;
+}
+.top h4
+{
+        padding-left: 1rem;
+}
+.infoP
+{
+    
+    margin-right: 0.5rem;
+    font-weight: bold;
+
+}
+.subscribe 
+{
+    margin: 1rem;
+}
+
+.subscriber-content h5
+{
+    font-size: 1rem;
+    text-align: center;
+}
+
+.top >div 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    
+}
+.middle
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.image-div 
+{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.iconn 
+{
+    width: 60px;
+	height: 60px;
+  border-radius: 50px; 
+  margin: 10px 60px;
+}
+.btn-container  button
+{
+  margin-left:1rem;
+}
+
+
+
+
+
+@media screen and  (max-width:600px)
+{
+    .top 
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly
+    }
+
+    .btn-container
+    {
+        display: flex;
+    }
+
+    .btn-container button 
+    {
+        font-size: 1rem;
+        
+    }
+}

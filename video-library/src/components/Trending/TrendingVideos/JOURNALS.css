@@ -1,0 +1,39 @@
+.journals-row {
+  display: flex;
+  margin-bottom: 30px;
+  flex-direction: row;
+  max-width: 700px;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.thumbnail {
+  display: flex;
+}
+
+.journal-row-text {
+  margin-left: 0px;
+  margin-top: 6px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid lightgray;
+  border-radius: 10px;
+}
+.journal-row-text > h4 {
+  font-size: 1rem;
+}
+
+.journal-row-headline {
+  font-size: 14px;
+}
+
+.journal-row-description {
+  margin-top: 20px;
+  font-size: 18px;
+  color: black
+}
+
+
+
